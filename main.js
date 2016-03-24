@@ -7,27 +7,30 @@ var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'
 //use post
 //unsure why settings needs to be inside ()
 
-var settings = $.ajax ({
-
-	url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
-	type: 'post',
-	//not sure why this is {movies: movies}
-	data: {movies:movies}, 
-	datatype: 'jasonp',
-	//not sure what success does here other than call a function passing in the array.  
-	success: (function(array) {
-     $('.answer').html();
- 	}),
-
-	error: function(err) {
-		console.log(err);
-	},
-
-	complete: function() {
-		console.log('I got a message');
-	}
-});
+movies.forEach(function(array) {
 
 
+	var settings = $.ajax ({
+
+		url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
+		type: 'post',
+		//not sure why this is {movies: movies}
+		data: movies, 
+		datatype: 'jasonp',
+		//not sure what success does here other than call a function passing in the array.  
+		success: (function(array) {
+	     $('.answer').html();
+	 	}),
+
+		error: function(err) {
+			console.log(err);
+		},
+
+		complete: function() {
+			console.log('I got a message');
+		}
+})
+
+};
 
 
