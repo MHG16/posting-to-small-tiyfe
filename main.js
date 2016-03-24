@@ -2,7 +2,7 @@
 
 
 //need an array with the data to be posted
-var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'Guardians of the Galaxy'}]
+var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'Guardians of the Galaxy'}];
 
 //use forEach
 //put settings in parenthesis
@@ -10,7 +10,7 @@ var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'
 
 var settings = $.ajax{
 
-	url: ' http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
+	url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
 	type: 'post',
 	data: movies, 
 	datatype: 'jasonp',
