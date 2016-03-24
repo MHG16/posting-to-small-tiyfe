@@ -7,20 +7,19 @@ var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'
 //use post
 //unsure why settings needs to be inside ()
 
-movies.forEach(function(array) {
+movies.forEach(function(movie) {
 
 
 	var settings = $.ajax ({
 
 		url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
 		type: 'post',
-		//not sure why this is {movies: movies}
-		data: {movies}, 
-		datatype: 'jasonp',
+		data: movie, 
+		datatype: 'json',
 		//not sure what success does here other than call a function passing in the array.  
-		success: (function(array) {
-	     $('.answer').html();
-	 	}),
+		success: function(data) {
+	     	console.log(movies);
+	 	},
 
 		error: function(err) {
 			console.log(err);
@@ -29,7 +28,7 @@ movies.forEach(function(array) {
 		complete: function() {
 			console.log('I got a message');
 		}
-})
+	})
 
 });
 
