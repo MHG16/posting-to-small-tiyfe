@@ -16,7 +16,7 @@ movies.forEach(function(movie) {
 		type: 'post',
 		data: movie, 
 		datatype: 'json',
-		//not sure what success does here other than call a function passing in the array.  
+	 
 		success: function(data) {
 	     	console.log(movies);
 	 	},
