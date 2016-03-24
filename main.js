@@ -2,7 +2,7 @@
 
 
 //need an array with the data to be posted
-var movies = [{'Star Wars': 1977}, {'Raiders of the Lost Ark': 1981}, {'Guardians of the Galaxy': 2014}]
+var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'Guardians of the Galaxy'}]
 
 //use forEach
 //put settings in parenthesis
@@ -14,7 +14,7 @@ var settings = $.ajax{
 	type: 'post',
 	data: movies, 
 	datatype: 'jasonp',
-	success: forEach(function(msg)) {
+	success: forEach(function(array)) {
      $('.answer').html(msg);
  	},
 
