@@ -15,7 +15,7 @@ movies.forEach(function(array) {
 		url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
 		type: 'post',
 		//not sure why this is {movies: movies}
-		data: movies, 
+		data: {movies}, 
 		datatype: 'jasonp',
 		//not sure what success does here other than call a function passing in the array.  
 		success: (function(array) {
@@ -31,6 +31,6 @@ movies.forEach(function(array) {
 		}
 })
 
-};
+});
 
 
