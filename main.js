@@ -4,19 +4,20 @@
 //need an array with the data to be posted
 var movies = [{title: 'Star Wars'}, {title: 'Raiders of the Lost Ark'}, {title:'Guardians of the Galaxy'}];
 
-//use forEach
-//put settings in parenthesis
 //use post
+//unsure why settings needs to be inside ()
 
-var settings = $.ajax{
+var settings = $.ajax ({
 
 	url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
 	type: 'post',
-	data: movies, 
+	//not sure why this is {movies: movies}
+	data: {movies:movies}, 
 	datatype: 'jasonp',
-	success: forEach(function(array)) {
-     $('.answer').html(msg);
- 	},
+	//not sure what success does here other than call a function passing in the array.  
+	success: (function(array) {
+     $('.answer').html();
+ 	}),
 
 	error: function(err) {
 		console.log(err);
@@ -25,7 +26,7 @@ var settings = $.ajax{
 	complete: function() {
 		console.log('I got a message');
 	}
-};
+});
 
 
 
